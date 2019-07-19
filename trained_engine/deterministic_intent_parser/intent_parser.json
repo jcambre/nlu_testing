@@ -1,0 +1,157 @@
+{
+  "config": {
+    "ignore_stop_words": true,
+    "max_pattern_length": 1000,
+    "max_queries": 500,
+    "unit_name": "deterministic_intent_parser"
+  },
+  "group_names_to_slot_names": {
+    "group0": "contentPlatform",
+    "group1": "location",
+    "group2": "musicTerm",
+    "group3": "query",
+    "group4": "tab_description"
+  },
+  "language_code": "en",
+  "patterns": {
+    "julia:FindTab": [
+      "^\\s*switch\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*$",
+      "^\\s*open\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*tab\\s*$",
+      "^\\s*find\\s*tab\\s*on\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*(?P<group4_2>%TAB_DESCRIPTION%)\\s*$",
+      "^\\s*find\\s*tab\\s*with\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*$",
+      "^\\s*find\\s*tab\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*$",
+      "^\\s*find\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*tab\\s*$",
+      "^\\s*open\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*page\\s*$",
+      "^\\s*find\\s*tab\\s*on\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*$",
+      "^\\s*re\\s*open\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*tab\\s*$",
+      "^\\s*go\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*tab\\s*$",
+      "^\\s*switch\\s*tab\\s*with\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*$",
+      "^\\s*open\\s*page\\s*with\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*on\\s*it\\s*$",
+      "^\\s*show\\s*tab\\s*i\\s*have\\s*open\\s*with\\s*(?P<group4>%TAB_DESCRIPTION%)\\s*$"
+    ],
+    "julia:mute": [
+      "^\\s*stop\\s*audio\\s*$",
+      "^\\s*turn\\s*sound\\s*zero\\s*$",
+      "^\\s*volume\\s*zero\\s*$",
+      "^\\s*volume\\s*off\\s*$",
+      "^\\s*shut\\s*up\\s*$",
+      "^\\s*turn\\s*off\\s*sound\\s*$",
+      "^\\s*turn\\s*off\\s*audio\\s*$",
+      "^\\s*turn\\s*off\\s*volume\\s*$",
+      "^\\s*quiet\\s*$",
+      "^\\s*stop\\s*sound\\s*$",
+      "^\\s*stop\\s*music\\s*$",
+      "^\\s*stop\\s*whatever\\s*is\\s*playing\\s*$",
+      "^\\s*mute\\s*everything\\s*$",
+      "^\\s*mute\\s*all\\s*$",
+      "^\\s*turn\\s*sound\\s*off\\s*$",
+      "^\\s*disable\\s*sound\\s*$",
+      "^\\s*mute\\s*$"
+    ],
+    "julia:openWebsite": [
+      "^\\s*show\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*bring\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*open\\s*(?P<group3>%QUERY%)\\s*in\\s*new\\s*window\\s*$",
+      "^\\s*open\\s*(?P<group3>%QUERY%)\\s*in\\s*new\\s*tab\\s*$",
+      "^\\s*navigate\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*go\\s*(?P<group3>%QUERY%)\\s*$"
+    ],
+    "julia:pause": [
+      "^\\s*pause\\s*music\\s*$",
+      "^\\s*hit\\s*pause\\s*$",
+      "^\\s*click\\s*pause\\s*$",
+      "^\\s*pause\\s*audio\\s*$",
+      "^\\s*pause\\s*video\\s*$",
+      "^\\s*stop\\s*$",
+      "^\\s*pause\\s*$"
+    ],
+    "julia:play": [
+      "^\\s*play\\s*(?P<group2>%MUSICTERM%)\\s*$",
+      "^\\s*play\\s*(?P<group2>%MUSICTERM%)\\s*on\\s*(?P<group0>%CONTENTPLATFORM%)\\s*$",
+      "^\\s*play\\s*(?P<group0>%CONTENTPLATFORM%)\\s*on\\s*(?P<group0_2>%CONTENTPLATFORM%)\\s*$",
+      "^\\s*queue\\s*up\\s*(?P<group0>%CONTENTPLATFORM%)\\s*(?P<group2>%MUSICTERM%)\\s*$",
+      "^\\s*(?P<group2>%MUSICTERM%)\\s*album\\s*$",
+      "^\\s*click\\s*play\\s*$",
+      "^\\s*hit\\s*play\\s*$",
+      "^\\s*resume\\s*playing\\s*$",
+      "^\\s*start\\s*video\\s*$",
+      "^\\s*start\\s*playing\\s*$",
+      "^\\s*un\\s*pause\\s*$",
+      "^\\s*unpause\\s*$",
+      "^\\s*resume\\s*$",
+      "^\\s*play\\s*song\\s*$",
+      "^\\s*play\\s*audio\\s*$",
+      "^\\s*play\\s*video\\s*$",
+      "^\\s*watch\\s*$",
+      "^\\s*restart\\s*$",
+      "^\\s*continue\\s*$",
+      "^\\s*play\\s*$"
+    ],
+    "julia:read": [
+      "^\\s*narrate\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*read\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*read\\s*article\\s*on\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*read\\s*article\\s*$"
+    ],
+    "julia:search": [
+      "^\\s*search\\s*(?P<group3>%QUERY%)\\s*on\\s*wikipedia\\s*$",
+      "^\\s*search\\s*for\\s*(?P<group3>%QUERY%)\\s*on\\s*amazon\\s*$",
+      "^\\s*search\\s*(?P<group3>%QUERY%)\\s*on\\s*youtube\\s*$",
+      "^\\s*what\\s*is\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*get\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*look\\s*up\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*find\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*do\\s*search\\s*for\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*search\\s*(?P<group3>%QUERY%)\\s*$",
+      "^\\s*search\\s*for\\s*(?P<group3>%QUERY%)\\s*$"
+    ],
+    "julia:unmute": [
+      "^\\s*reenable\\s*sound\\s*$",
+      "^\\s*turn\\s*sound\\s*on\\s*$",
+      "^\\s*unmute\\s*all\\s*$",
+      "^\\s*un\\s*mute\\s*$",
+      "^\\s*unmute\\s*$",
+      "^\\s*turn\\s*on\\s*volume\\s*$",
+      "^\\s*turn\\s*on\\s*audio\\s*$",
+      "^\\s*turn\\s*on\\s*sound\\s*$",
+      "^\\s*volume\\s*on\\s*$",
+      "^\\s*volume\\s*up\\s*$",
+      "^\\s*turn\\s*sound\\s*up\\s*again\\s*$"
+    ],
+    "julia:weather": [
+      "^\\s*snow\\s*forecast\\s*(?P<group1>%LOCATION%)\\s*$",
+      "^\\s*temperature\\s*tomorrow\\s*in\\s*(?P<group1>%LOCATION%)\\s*$",
+      "^\\s*is\\s*it\\s*snowing\\s*in\\s*(?P<group1>%LOCATION%)\\s*$",
+      "^\\s*what\\s*s\\s*forecast\\s*for\\s*(?P<group1>%LOCATION%)\\s*$",
+      "^\\s*how\\s*hot\\s*is\\s*it\\s*in\\s*(?P<group1>%LOCATION%)\\s*$",
+      "^\\s*temperature\\s*in\\s*(?P<group1>%LOCATION%)\\s*$",
+      "^\\s*(?P<group1>%LOCATION%)\\s*weather\\s*$",
+      "^\\s*what\\s*s\\s*weather\\s*in\\s*(?P<group1>%LOCATION%)\\s*$"
+    ]
+  },
+  "slot_names_to_entities": {
+    "julia:FindTab": {
+      "tab_description": "tab_description"
+    },
+    "julia:mute": {},
+    "julia:openWebsite": {
+      "query": "query"
+    },
+    "julia:pause": {},
+    "julia:play": {
+      "contentPlatform": "contentPlatform",
+      "musicTerm": "musicTerm"
+    },
+    "julia:read": {
+      "query": "query"
+    },
+    "julia:search": {
+      "query": "query"
+    },
+    "julia:unmute": {},
+    "julia:weather": {
+      "location": "location"
+    }
+  },
+  "stop_words_whitelist": {}
+}

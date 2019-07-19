@@ -1,0 +1,24 @@
+{
+  "parsers_metadata": [
+    {
+      "entity_identifier": "contentPlatform",
+      "entity_parser": "parser_1"
+    },
+    {
+      "entity_identifier": "location",
+      "entity_parser": "parser_2"
+    },
+    {
+      "entity_identifier": "musicTerm",
+      "entity_parser": "parser_3"
+    },
+    {
+      "entity_identifier": "query",
+      "entity_parser": "parser_4"
+    },
+    {
+      "entity_identifier": "tab_description",
+      "entity_parser": "parser_5"
+    }
+  ]
+}
